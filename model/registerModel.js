@@ -1,7 +1,11 @@
-var db=require('../db_connection');
+//var db=require('../db_connection');
 var RegisterUsers={
-   registerAsCustomer:function(request,callback){
-       return db.query("your db query",[request],callback);		
+   registerAsCustomer:function(merchant,callback){
+  		return "Harish";
+   },
+   printHello:function(){
+   	 return "Model code will writtern here";
    }
+
 };
  module.exports=RegisterUsers;

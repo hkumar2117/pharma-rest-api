@@ -1,18 +1,17 @@
 var express = require('express');
-var RegisterUsers = require('../../model/registerModel');
+var RegisterUser = require('../../model/registerModel');
 
 var router = express.Router();
 
 
+router.all('/',function(req,res,next) {
+	res.send("Invalid Url");
+});
+
+
 router.all('/customer', function(req, res, next) {
   if(req.query != '') {
-     	RegisterUsers.regsiterAsCustomer(req.query,function(err,rows){ 
-          if(err) {
-  			res.json(err);
-  		  } else {
-  			res.json("some message");
-  		  }
-        });
+     	 res.send(RegisterUser.printHello());
       }	 else {
          res.send('Invalid parameter');
       }
