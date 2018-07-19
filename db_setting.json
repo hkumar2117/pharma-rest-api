@@ -1,0 +1,6 @@
+{
+    host : 'locahost',
+    user : 'root',
+    password : "",
+    database : 'database_name'
+}
