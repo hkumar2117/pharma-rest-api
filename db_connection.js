@@ -1,20 +1,20 @@
 var mysql = require('mysql');
-var settings = require('./db_setting.json');
 var db;
 
-function connectDatabase() {
-    if (!db) {
-        db = mysql.createConnection(settings);
+var connection = mysql.createConnection({
+    host     : 'localhost',
+    user     : '<USERNAME that tipically is root>',
+    password : '<PASSWORD or just use null if youre working lcocally',
+    database : '<DATABASE-NAME>'
+});
 
-        db.connect(function(err){
-            if(!err) {
-                console.log('Database is connected!');
-            } else {
-                console.log('Error connecting database!');
-            }
-        });
+// connect to mysql
+connection.connect(function(err) {
+    // in case of error
+    if(err){
+        console.log(err.code);
+        console.log(err.fatal);
     }
-    return db;
-}
+});
 
-module.exports = connectDatabase();
+module.exports = connection;
