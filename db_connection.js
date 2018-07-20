@@ -3,9 +3,10 @@ var db;
 
 var connection = mysql.createConnection({
     host     : 'localhost',
-    user     : '<USERNAME that tipically is root>',
-    password : '<PASSWORD or just use null if youre working lcocally',
-    database : '<DATABASE-NAME>'
+    user     : 'root',
+    password : 'root',
+    database : 'pharma'
+
 });
 
 // connect to mysql
