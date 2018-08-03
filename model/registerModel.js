@@ -11,11 +11,10 @@ var RegisterUsers={
   			zipcode : params.p_zipcode,
   			email : params.p_email
     	};
-		db.query(sql, [payload], function(err) {
+		  db.query(sql, [payload], function(err) {
   			if(err) {
      			throw err;
   			}
-  			//db.end();
   		});
   		callback(null);
    },

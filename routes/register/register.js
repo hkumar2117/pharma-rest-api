@@ -33,7 +33,6 @@ router.get('/pharmacy', function(req, res, next) {
 });
 
 
-
 router.post('/admin', function(req, res, next) {
   res.send('Register as a admin comes here..');
 });
