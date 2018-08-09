@@ -1,14 +1,12 @@
 var express = require('express');
 var isJsonValid = require('is-valid-json');
-
 var RegisterUser = require('../../model/registerModel');
-
-var router = express.Router();
-
+var router = express.Router()
 router.post('/pharmacy/add', function(req, res, next) {
+
 	    if(isJsonValid(req.body)) {
 	    	RegisterUser.addPharmacyDetails(req.body,function(err){ 
-	          if(err) {
+	          if(err) { 
 	  			 res.json(RegisterUser.error_response(0));
 	  		  } else {
 				 res.json(RegisterUser.success_response(1));

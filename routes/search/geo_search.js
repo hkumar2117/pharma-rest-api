@@ -32,4 +32,8 @@ searchRouter.get('/pharmacy/:key/:val/:limit',function(req, res, next){
     }
 });
 
+searchRouter.all('/*',function(req,res,next) {
+  res.send("Invalid Url");
+});
+
 module.exports = searchRouter;

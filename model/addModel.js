@@ -1,6 +1,6 @@
 var db=require('../db_connection');
-var RegisterUsers={
-    addPharmacyDetails:function(params,callback){
+var addUsers={
+         addNewUsers:function(params,callback){
     
    	  var sql = "INSERT into pharma_companies set ?";
   		var result;
@@ -9,6 +9,8 @@ var RegisterUsers={
   			company : params.company,
   			lang_code : params.lang_code,
   			address : params.address 
+  			// zipcode : '1123322',
+  			// email : 'dss@fdsfdsd.gdf'
     	};
 
 		  db.query(sql, [payload], function(err) {
@@ -18,12 +20,7 @@ var RegisterUsers={
   		});
   		callback(null);
       // console.log(sql );
-   },
-   getPharmacyDetails:function(params,callback){
-   	    let sql = "select * from pharmacy where zipcode = ?";
-   	    return db.query(sql,[params],callback);
-   },
-
+   }, 
    success_response: function(data){
    	   return "{ 'status' : 1,message : Success ,'data' :"+"data"+"}"; 
    },
@@ -31,4 +28,4 @@ var RegisterUsers={
    	   return "{ 'status' : 0,message : Failed ,'data' :"+"data"+"}"; 
    }
 };
- module.exports=RegisterUsers;
+ module.exports=addUsers;
