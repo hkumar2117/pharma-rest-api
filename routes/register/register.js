@@ -1,8 +1,9 @@
 var express = require('express');
 var isJsonValid = require('is-valid-json');
 var RegisterUser = require('../../model/registerModel');
-var router = express.Router()
-router.post('/pharmacy/add', function(req, res, next) {
+var router = express.Router();
+
+router.post('/pharmacy/saveDetails', function(req, res, next) {
 
 	    if(isJsonValid(req.body)) {
 	    	RegisterUser.addPharmacyDetails(req.body,function(err){ 
@@ -15,6 +16,12 @@ router.post('/pharmacy/add', function(req, res, next) {
 	}  else {
 	    res.send("Invalid params");
 	}
+});
+
+router.post('pharmacy/addUser',function (req ,res ,next) {
+
+
+
 });
 
 router.get('/pharmacy', function(req, res, next) {
